@@ -1,0 +1,39 @@
+﻿<UserControl x:Class="GetOsuFile.ImageCard"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             mc:Ignorable="d" Padding="4">
+    <materialDesign:Card x:Name="card" materialDesign:ShadowAssist.ShadowDepth="Depth1">
+        <materialDesign:Card.ToolTip>
+            <ToolTip Placement="Left" PlacementRectangle="90 5 0 0"
+                     Opacity=".8" x:Name="ImageName">
+                Изображение
+            </ToolTip>
+        </materialDesign:Card.ToolTip>
+        <materialDesign:Card.ContextMenu>
+            <ContextMenu Margin="0" Padding="0">
+                <MenuItem Click="MenuItem_Click" Header="Скопировать песню osu"
+                          FontSize="11">
+                </MenuItem>
+            </ContextMenu>
+        </materialDesign:Card.ContextMenu>
+        <Grid>
+            <Button Style="{StaticResource MaterialDesignRaisedDarkButton}" Padding="5 0"
+                    HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5"
+                    x:Name="Dowload" Click="Dowload_Click" Panel.ZIndex="10">
+                <materialDesign:PackIcon Kind="Download"
+                                         Height="24" Width="24" />
+            </Button>
+            <Button Style="{StaticResource MaterialDesignRaisedDarkButton}" Padding="5 0"
+                    HorizontalAlignment="Left" VerticalAlignment="Top" Margin="45 5 5 5"
+                    x:Name="Music" Click="Music_Click" Panel.ZIndex="10">
+                <materialDesign:PackIcon Kind="Music"
+                                         Height="24" Width="24" />
+            </Button>
+            <Image Height="140" Width="196" Stretch="UniformToFill" 
+                   x:Name="Preview" MouseLeftButtonUp="Preview_MouseLeftButtonUp"/>
+        </Grid>
+    </materialDesign:Card>
+</UserControl>
